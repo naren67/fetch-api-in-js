@@ -139,6 +139,37 @@
 //to avoid app break
 
 
+// const api = 'https://jsonplaceholder.typicode.com/todos'
+
+// async function fetchData(){
+
+//           try{
+//                     const data = await fetch(api)
+//                     console.log(data)
+                    
+//                     if(data.status === 200){
+//                               const result = await data.json()
+//                               console.log(result)
+//                     }
+//                     else{
+//                               console.log('something went wrong')
+//                     }
+//           }
+//           catch{
+//                     console.log('error occured')
+//           }
+// }
+
+// fetchData()
+
+
+//.......................................
+
+
+//use catch(err) only if you throw the error message
+
+
+
 const api = 'https://jsonplaceholder.typicode.com/todos'
 
 async function fetchData(){
@@ -151,6 +182,10 @@ async function fetchData(){
                               const result = await data.json()
                               console.log(result)
                     }
+                    else{
+                              console.log('something went wrong')
+                              throw new Error('error occured')
+                    }
           }
           catch(error){
                     console.log(error.message)
@@ -158,5 +193,8 @@ async function fetchData(){
 }
 
 fetchData()
+
+
+//or try if status !==200 throw error firstly
 
 
